@@ -1,0 +1,122 @@
+.body
+	display: flex
+	flex-direction: column
+	align-items: center
+	width: 100%
+	.question
+		position: relative
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 100%
+		height: 75px
+		font-size: 1.2em
+		color: orange
+		background: linear-gradient(to bottom, rgba(87, 92, 97, 0.9) 0%, rgba(3, 9, 15, 0.9) 100%)
+		span
+			opacity: 1
+			z-index: 50
+		.timer
+			position: absolute
+			left: 0
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 0
+			height: 75px
+			color: black
+			opacity: 0.5
+			background: linear-gradient(to bottom, rgba(87, 92, 97, 1) 0%, rgba(3, 9, 15, 1) 100%)
+	.answers
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		width: 800px
+		margin: 20px 0
+		.answer
+			position: relative
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 350px
+			min-height: 75px
+			font-size: 1.2em
+			color:black
+			cursor: pointer
+			margin: 15px
+			padding: 0 60px
+			border-radius: 55px
+			background: wheat
+			&:focus
+				outline: none
+			&:hover
+				background: rgba(300, 200, 140, 1)
+			.number
+				position: absolute
+				left: 15px
+				display: flex
+				justify-content: center
+				align-items: center
+				width: 36px
+				height: 36px
+				color: white
+				border-radius: 50%
+				background: black
+		.answer.right
+			color: black
+			background: rgb(131, 201, 27)
+	.score
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 50px 0 20px;
+		.score_block
+			display: flex
+			justify-content: space-between
+			align-items: center
+			width: 230px
+			height: 50px
+			border-radius: 50px
+			background: wheat
+			.text
+				padding-left: 20px
+			.count
+				display: flex
+				justify-content: center
+				align-items: center
+				width: 100px
+				height: 36px
+				color: white
+				margin-right: 7px
+				border-radius: 50px
+				background: black
+	.hints
+		display: flex
+		justify-content: center
+		align-items: center
+		margin: 20px 0
+		.hint
+			display: flex
+			justify-content: space-between
+			align-items: center
+			width: 200px
+			height: 50px
+			margin: 0 10px
+			color: white
+			cursor: pointer
+			border-radius: 50px
+			background: black
+			&:hover
+				opacity: 0.7
+			.name
+				padding-left: 20px
+			.cost
+				display: flex
+				justify-content: center
+				align-items: center
+				height: 36px
+				width: 36px
+				color: black
+				margin-right: 7px
+				border-radius: 50%
+				background: white

@@ -1,0 +1,85 @@
+.head
+	position: relative
+	display: flex
+	align-items: center
+	width: 100%
+	height: 230px
+	overflow: hidden
+	background: wheat
+	.progress
+		position: absolute
+		left: 50%
+		display: flex
+		align-items: center
+		transition: 2s all
+		.num
+			position: relative
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 30px
+			height: 30px
+			margin: 0 20px
+			opacity: 0.3
+			border: 2px solid white
+			border-radius: 50%
+			span
+				&::before
+					content: ""
+					position: absolute
+					top: 14px
+					left: 34px
+					width: 30px
+					height: 2px
+					opacity: 0.3
+					background: black
+		.num.current
+			width: 50px
+			height: 50px
+			color: white
+			opacity: 1
+			border: 2px solid white
+			span
+				&::before
+					top: 24px
+					left: 54px
+		.num.complete,
+		.num.complete span &::before
+			opacity: 1
+			border-color: black
+	.type_questions
+		display: flex
+		justify-content: center
+		align-self: flex-end
+		width: 100%
+		margin-bottom: 10px
+		.type
+			display: flex
+			align-items: center
+			height: 40px
+			color: white
+			margin: 0 5px
+			border-radius: 50px
+			background: black
+			.type_name
+				padding: 0 20px
+			.type_value
+				display: flex
+				justify-content: center
+				align-items: center
+				width: 26px
+				height: 26px
+				margin-right: 7px
+				border-radius: 50%
+	.easy,
+	.easy .type_value
+		background: gray
+	.medium,
+	.medium .type_value
+		background: yellowgreen
+	.hard,
+	.hard .type_value
+		background: orange
+	.expert,
+	.expert .type_value
+		background: red

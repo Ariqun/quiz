@@ -1,31 +1,50 @@
 {
-	"name": "window",
+	"name": "quiz",
 	"version": "1.0.0",
-	"description": "",
 	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"author": "",
+	"author": "Ariqun",
 	"license": "ISC",
-	"browserslist": [
-		"> 1%",
-		"not dead"
-	],
-	"devDependencies": {
-		"@babel/core": "^7.12.13",
-		"@babel/preset-env": "^7.12.13",
-		"babel": "^6.23.0",
-		"babel-core": "^6.26.3",
-		"babel-loader": "^8.2.2",
-		"browser-sync": "^2.26.14",
-		"core-js": "^3.8.3",
-		"gulp": "^4.0.2",
-		"webpack": "^5.20.1",
-		"webpack-stream": "^6.1.2"
-	},
+	"description": "Quiz",
+	"private": true,
 	"dependencies": {
-		"json-server": "^0.16.3",
-		"npm-check-updates": "^11.1.1"
+		"@testing-library/jest-dom": "^5.13.0",
+		"@testing-library/react": "^11.2.7",
+		"@testing-library/user-event": "^12.8.3",
+		"node-sass": "^6.0.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-redux": "^7.2.4",
+		"react-router-dom": "^5.2.0",
+		"react-scripts": "4.0.3",
+		"react-tooltip": "^4.2.19",
+		"redux": "^4.1.0",
+		"web-vitals": "^1.1.2"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"npm-check-updates": "^11.5.11"
 	}
 }
