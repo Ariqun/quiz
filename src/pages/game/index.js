@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
+import {withRouter} from 'react-router-dom';
 
 import Head from './components/head';
 import Body from './components/body';
-import GameOver from './components/gameOver';
 import allQuestions from '../../components/questions';
 import Btn from '../../components/buttons/btn';
 
 import './index.sass';
 
-const Game = () => {
+const Game = ({history}) => {
 	const [questions, setQuestions] = useState([]);
 	const [questionNumber, setCurrentQuestion] = useState(0);
 	const [score, setScore] = useState(0);
@@ -19,6 +19,13 @@ const Game = () => {
 	const [isLoading, setLoading] = useState(true);
 
 	useEffect(() => {
+		if (isGameOver) {
+			history.push({
+				pathname: '/',
+				data: [score, rightCount, questions.length]
+			});
+		}
+
 		const shuffleArray = (arr) => {
 			for (let i = arr.length - 1; i > 0; i--) {
 				let j = Math.floor(Math.random() * (i + 1));
@@ -32,12 +39,9 @@ const Game = () => {
 		const qs = shuffleArray(allQuestions());
 		setQuestions(qs);
 		setLoading(false);
-	}, [])
+	}, [isGameOver])
 
 	if (isLoading) return null;
-	if (isGameOver) {
-		return <GameOver score={score} rightCount={rightCount} allCount={questions.length}/>
-	}
 	if (questionNumber >= questions.length) setGameOver(true);
 
 	const checkAnswer = (answer) => {
@@ -88,4 +92,4 @@ const Game = () => {
 	)
 }
 
-export default Game;
+export default withRouter(Game);
