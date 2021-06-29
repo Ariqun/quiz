@@ -3,7 +3,8 @@ import {withRouter} from 'react-router-dom';
 
 import Head from './components/head';
 import Body from './components/body';
-import allQuestions from '../../components/questions';
+// import allQuestions from '../../components/questions';
+import getQuestions from '../../components/localStorage/getQuestions';
 import Btn from '../../components/buttons/btn';
 
 import './index.sass';
@@ -12,7 +13,7 @@ const Game = ({history}) => {
 	const [questions, setQuestions] = useState([]);
 	const [questionNumber, setCurrentQuestion] = useState(0);
 	const [score, setScore] = useState(0);
-	const [rightCount, setRightCount] = useState(0);
+	const [rightAnswers, setRightAnswers] = useState(0);
 	const [showRight, setShowRight] = useState(false);
 	const [hideWrong, setHideWrong] = useState(false);
 	const [isGameOver, setGameOver] = useState(false);
@@ -22,7 +23,7 @@ const Game = ({history}) => {
 		if (isGameOver) {
 			history.push({
 				pathname: '/',
-				data: [score, rightCount, questions.length]
+				data: [score, rightAnswers, questionNumber]
 			});
 		}
 
@@ -36,7 +37,7 @@ const Game = ({history}) => {
 			return arr;
 		}
 
-		const qs = shuffleArray(allQuestions());
+		const qs = shuffleArray(getQuestions());
 		setQuestions(qs);
 		setLoading(false);
 	}, [isGameOver])
@@ -52,7 +53,7 @@ const Game = ({history}) => {
 		if (answer !== right) setScore(score - types[difficult]);
 		if (answer === right) {
 			setScore(score + types[difficult]);
-			setRightCount(rightCount + 1);
+			setRightAnswers(rightAnswers + 1);
 		}
 
 		setCurrentQuestion(questionNumber + 1);

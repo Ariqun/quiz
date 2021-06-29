@@ -21,8 +21,13 @@ const Main = ({location}) => {
 		<div className="main_page">
 			<div className="container-xxl">
 				{checkScore()}
+
 				<Link to={`/game`}>
 					<div className="btn">Новая игра</div>
+				</Link>
+
+				<Link to={`/addQuestion`}>
+					<div className="btn">Добавить свой вопрос в базу данных</div>
 				</Link>
 			</div>
 		</div>
