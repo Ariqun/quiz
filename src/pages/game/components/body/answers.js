@@ -2,7 +2,6 @@ import React from 'react';
 
 import getRandomIds from '../../../../components/manipulationsWithNums/getRandomIds';
 
-
 const Answers = ({currentQuestion, checkAnswer, showRight, hideWrong}) => {
 	const {a1, a2, a3, a4, right} = currentQuestion;
 	const hideIds = getRandomIds(right);

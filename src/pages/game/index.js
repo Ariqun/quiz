@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import Head from './components/head';
 import Body from './components/body';
+import GameOver from './components/gameOver';
 import allQuestions from '../../components/questions';
 import Btn from '../../components/buttons/btn';
-import GameOver from './components/gameOver';
 
 import './index.sass';
 
@@ -52,6 +52,8 @@ const Game = () => {
 		}
 
 		setCurrentQuestion(questionNumber + 1);
+		setShowRight(false);
+		setHideWrong(false);
 	}
 
 	const checkHint = (hint, cost) => {
@@ -71,10 +73,11 @@ const Game = () => {
 	return(
 		<div className="game_page">
 			<Head questionNumber={questionNumber} questions={questions} />
-			<Body questionNumber={questionNumber} 
+			<Body questionNumber={questionNumber}
 				  questions={questions} 
 				  score={score} 
-				  checkAnswer={checkAnswer} 
+				  checkAnswer={checkAnswer}
+				  setScore={setScore}
 				  checkHint={checkHint}
 				  showRight={showRight}
 				  hideWrong={hideWrong}
