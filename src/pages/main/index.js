@@ -23,11 +23,11 @@ const Main = ({location}) => {
 				{checkScore()}
 
 				<Link to={`/game`}>
-					<div className="btn">Новая игра</div>
+					<button className="btn">Новая игра</button>
 				</Link>
 
 				<Link to={`/addQuestion`}>
-					<div className="btn">Добавить свой вопрос в базу данных</div>
+					<button className="btn">Добавить свой вопрос в базу данных</button>
 				</Link>
 			</div>
 		</div>

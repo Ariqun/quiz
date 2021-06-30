@@ -3,9 +3,7 @@ import {withRouter} from 'react-router-dom';
 
 import Head from './components/head';
 import Body from './components/body';
-// import allQuestions from '../../components/questions';
 import getQuestions from '../../components/localStorage/getQuestions';
-import Btn from '../../components/buttons/btn';
 
 import './index.sass';
 
@@ -88,7 +86,7 @@ const Game = ({history}) => {
 				  hideWrong={hideWrong}
 			/>
 
-			<Btn text="Закончить игру" func={gameOver}/>
+			<button onClick={() => gameOver()} className="btn">Закончить игру</button>
 		</div>
 	)
 }

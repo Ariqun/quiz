@@ -80,7 +80,7 @@ const AddQuestion = () => {
 				</form>	
 
 				<Link to={`/game`}>
-					<div className="btn">Новая игра</div>
+					<button className="btn">Новая игра</button>
 				</Link>
 			</div>
 		</div>

@@ -1,4 +1,5 @@
 /* -------------- Сброс стилей -------------- */
+
 *, *::before, *::after
 	box-sizing: border-box
 
@@ -15,8 +16,8 @@ body
 	scroll-behavior: smooth
 	text-rendering: optimizeSpeed
 
-a:not([class])
-	text-decoration-skip-ink: auto
+a
+	text-decoration: none
 
 img
 	max-width: 100%
@@ -25,8 +26,30 @@ img
 input, button, textarea, select
 	font: inherit
 
+
 /* -------------- Fonts -------------- */
 
 @font-face
 	font-family: 'Beaufort for LoL'
 	src: url('./fonts/beaufortforlol-regular.otf')
+
+
+/* -------------- Media -------------- */
+
+@media screen and (max-width: 575px)
+	.head
+		height: 200px
+	.body 
+		.question
+			text-align: center
+			font-size: 16px
+			padding: 0 10px
+		.score
+			margin: 10px
+		.answers 
+			.answer
+				width: 250px
+				font-size: 16px
+				text-align: center
+
+
